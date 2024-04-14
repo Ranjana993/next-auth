@@ -30,9 +30,9 @@ export async function POST(request: NextRequest) {
       password: hashedPassword
     }).save()
     console.log(newSavedUser);
-
+    const userId = newSavedUser._id 
     // sending verification email
-    const emailres = await sendEmail({ email, emailType: "VERIFY", userId: newSavedUser._id })
+    const emailres = await sendEmail({ email, emailType: "VERIFY", userId: userId })
     return NextResponse.json({ message: "User registered successfully ", success: true, newSavedUser })
 
   }
