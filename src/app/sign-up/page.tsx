@@ -24,7 +24,7 @@ const Signup = () => {
     try {
       const res = await axios.post("http://localhost:3000/api/users/sign-up", user)
       console.log("Sign Up Success ", res);
-      router.push("/verifyemail")
+      router.push("/sign-in")
     } catch (error: any) {
       console.log("Sign up failed ", error);
       toast.error(error.message)
@@ -62,7 +62,7 @@ const Signup = () => {
                   <input value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} className='bg-gray-300 p-2 rounded-md outline-none border-none' type="password" placeholder='enter your password' />
                 </div>
                 <button onClick={onSignUpHandle} className={disabled ? "bg-gray-600 p-2 hover:bg-black text-white":'bg-gray-900 p-2 hover:bg-black text-white'}>Submit</button>
-                <Link href={"/sign-in"}> or Login</Link>
+                <Link href={"/sign-in"} className='text-center'> or Login</Link>
               </div>
             </div>
         }
