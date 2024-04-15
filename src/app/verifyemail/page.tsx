@@ -39,8 +39,8 @@ const VerifyEmail = () => {
     <>
       <div className='bg-black flex items-center  justify-center text-white h-screen '>
         <div className='text-center'>
-          <h2>Verify email </h2>
-          <button className='bg-orange-500 text-black p-2 px-12'>{token ? <p>{token}</p> : "no token"}  </button>
+          <h2 className='text-3xl py-3'>Verify email </h2>
+          <button className=' p-2 px-6 text-white'>{token ? <p>{"token verified "}</p> : "no token"}  </button>
           {
             isVerified && (<>
               <h3>Verified </h3>
